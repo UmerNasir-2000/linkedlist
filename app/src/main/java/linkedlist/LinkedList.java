@@ -25,7 +25,6 @@ class Node<T> {
 public class LinkedList {
 
     private Node<Integer> head;
-
     private Node<Integer> tail;
 
     public LinkedList() {
@@ -41,7 +40,27 @@ public class LinkedList {
     }
 
     public Node<Integer> getHead() {
-        return head;
+        return this.head;
+    }
+
+    public Node<Integer> getTail() {
+        return this.tail;
+    }
+
+    public void deleteKey(Integer key) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void shift() {
+        if (isEmpty()) return;
+
+        else if (hasOneNode()) {
+            this.head = this.tail = null;
+        }
+
+        else {
+            this.head = this.head.getNext();
+        }
     }
 
     public void append(Integer value) {
@@ -58,7 +77,7 @@ public class LinkedList {
     public void print() {
         if (isEmpty()) return;
 
-        Node<Integer> current = this.head;
+        Node<Integer> current = this.getHead();
 
         while (current != null) {
             System.out.print(current.getData() + " -> ");
