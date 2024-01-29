@@ -1,28 +1,29 @@
 package linkedlist;
 
-class Node<T> {
-    private T data;
-    private Node<T> next;
 
-    public Node(T data) {
-        this.data = data;
-        this.next = null;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setNext(Node<T> next) {
-        this.next = next;
-    }
-
-    public Node<T> getNext() {
-        return next;
-    }
-}
 
 public class LinkedList {
+    static class Node<T> {
+        private T data;
+        private Node<T> next;
+    
+        public Node(T data) {
+            this.data = data;
+            this.next = null;
+        }
+    
+        public T getData() {
+            return data;
+        }
+    
+        public void setNext(Node<T> next) {
+            this.next = next;
+        }
+    
+        public Node<T> getNext() {
+            return next;
+        }
+    }
 
     private Node<Integer> head;
     private Node<Integer> tail;
