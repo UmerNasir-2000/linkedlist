@@ -48,7 +48,24 @@ public class LinkedList {
     }
 
     public void deleteKey(Integer key) {
-        throw new UnsupportedOperationException();
+        if (isEmpty()) return;
+
+        Node<Integer> previous = null;
+        Node<Integer> current = this.head;
+
+        while (current != null) {
+            if (current.getData().equals(key)) {
+                if (current == this.head) {
+                    this.head = current.getNext();
+                } else {
+                    previous.setNext(current.getNext());
+                }
+                current = current.getNext();
+            } else  {
+                previous = current;
+                current = current.getNext();
+            }
+        }
     }
 
     public void shift() {
